@@ -1,16 +1,16 @@
 # Wattpad Backup Utility
 
-A python script that automatically downloads and organizes all the fics an account has added to their library.
+A python script that automatically downloads and organizes all the stories an account has added to their library.
 
-I wrote this because I have an ~~ir~~rational fear of my favorite fics being deleted forever.
+I wrote this because I have an ~~ir~~rational fear of my favorite stories being deleted forever.
 
 A lot of stuff in this is from https://github.com/TheOnlyWayUp/WattpadDownloader
 
 ### Usage:
+*Tested using Python 3.12.*
 
 Using a virtual environment is recommended **(optional)**:
 ```
-mkdir venv
 python3 -m venv venv
 source venv/bin/activate
 ```
