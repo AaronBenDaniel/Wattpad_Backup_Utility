@@ -25,7 +25,14 @@ async def main(
     username: str, password: str, output_directory: Path, download_images: bool
 ):
     print("Logging in")
-    cookies = await fetch_cookies(username, password)
+    try:
+        cookies = await fetch_cookies(username, password)
+    except ValueError as exception:
+        if "No cookies." in str(exception):
+            print("Username or password incorrect.")
+            exit()
+        else:
+            raise(exception)
 
     print("Fetching library")
     stories = await fetch_library(username, cookies)
@@ -42,6 +49,7 @@ async def main(
 
     try:
         for metadata in stories:
+
             if (
                 metadata["title"] in download_history
                 and download_history[metadata["title"]] == metadata["modifyDate"]
